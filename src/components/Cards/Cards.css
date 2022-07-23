@@ -1,0 +1,8 @@
+.Cards{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    gap:10px
+}
