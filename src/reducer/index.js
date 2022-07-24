@@ -12,7 +12,6 @@ const rootReducer = (state = initialState, action) => {
                 characters: [...action.payload]
             }
         case actions.GET_CHARACTER_DETAIL:
-            console.log(action.payload)
             return {
                 ...state,
                 characterDetails: action.payload,

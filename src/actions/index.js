@@ -15,7 +15,6 @@ export const getAllCharacters= ()=> async dispatch =>{
 
 export const getCharacterDetail=(id)=> async dispatch =>{
     const res=await axios.get("https://rickandmortyapi.com/api/character/"+id)
-    console.log(res.data)
     dispatch ({
         type:GET_CHARACTER_DETAIL,
         payload: res.data

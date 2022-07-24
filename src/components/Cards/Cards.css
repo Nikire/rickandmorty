@@ -1,8 +1,12 @@
 .Cards{
+    border-radius: 20px;
+    background: #025951;
+    color:#0CF25D;
+    padding:30px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-content: center;
     justify-content: center;
-    gap:10px
+    gap:30px
 }
