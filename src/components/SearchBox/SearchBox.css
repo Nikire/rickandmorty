@@ -1,0 +1,17 @@
+.SearchBox{
+    border-radius: 20px;
+    background: #025951;
+    color:#0CF25D;
+    padding:30px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+    gap:10px
+}
+.Limiter{
+    display: flex;
+    
+}

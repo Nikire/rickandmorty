@@ -16,6 +16,11 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 characterDetails: action.payload,
             }
+        case actions.GET_CHARACTER_BY_NAME:
+            return {
+                ...state,
+                characters: [...action.payload]
+            }
         
         default:
             return state;
