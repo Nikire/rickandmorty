@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux';
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import * as actions from "../../actions";
 import './Searchbar.css'
 
@@ -7,16 +7,16 @@ import './Searchbar.css'
 export default function Searchbar() {
 
     const dispatch= useDispatch();
-
-        const [search,setSearch]=React.useState('')
-
-        const onHandleChange = (e)=>{
-        setSearch(e.target.value);
-        }
     
+    const [search,setSearch]=React.useState('')
+    const filters=useSelector((state)=>state.filters)
+    const onHandleChange = (e)=>{
+    setSearch(e.target.value);
+    }
+
     const onSubmitChange = (e)=>{
         e.preventDefault();
-        dispatch(actions.getCharacterByName(search))
+        dispatch(actions.getCharacterByName(search,filters))
         setSearch('');
     }
 

@@ -2,6 +2,12 @@ import * as actions from "../actions";
 const initialState={
     characters:[],
     characterDetails:{},
+    filters:{
+        status:'',
+        type:'',
+        species:'',
+        gender:'',
+    }
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -21,10 +27,15 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 characters: [...action.payload]
             }
-        
+        case actions.SET_FILTER:
+            return{
+                ...state,
+                filters:{...state.filters, [action.payload.filterType]:action.payload.filter}
+            }
         default:
             return state;
     }
+    
 }
 
 
