@@ -1,7 +1,7 @@
 import React from 'react'
 import './Filter.css'
-import { useDispatch } from 'react-redux';
-import { setFilter,resetPages } from '../../actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFilter,resetPages, getCharacterByName } from '../../actions';
 
 export default function Filter(props) {
     let options = [];
@@ -25,12 +25,15 @@ export default function Filter(props) {
     const dispatch= useDispatch();
 
     const [selected, setSelected] = React.useState(props.filterType);
+    const search = useSelector((state)=>state.search);
+    const filters= useSelector((state)=>state.filters);
 
     const onHandleChange = (e)=>{
         setSelected(e.target.value)
         if (e.target.value === props.filterType) dispatch(setFilter('', props.filterType))
         else  dispatch(setFilter(e.target.value, props.filterType))
         dispatch(resetPages())
+        dispatch(getCharacterByName(search,filters,'https://rickandmortyapi.com/api/character?page=1'))
     }
 
 return (
