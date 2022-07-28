@@ -17,15 +17,15 @@ export default function CardDetail() {
             origin=character.origin.name;
         }
     return (
-        <div className='CardDetail'>
-
-            <p>Name{character.name}</p>
-            <p>Status:{character.status}</p>
-            <p>Specie:{character.species}</p>
-            <p>Location:{location}</p>
-            <p>Origin:{origin}</p>
-            <img src={character.image} alt=''/>
-        
+        <div className='wrapperDetails'>
+            <div className='CardDetail'>
+                <p>Name: {character.name}</p>
+                <p>Status: {character.status}</p>
+                <p>Specie: {character.species}</p>
+                <p>Location: {location}</p>
+                <p>Origin: {origin}</p>
+                <img src={character.image} alt=''/>    
+            </div>
         </div>
     )
 }

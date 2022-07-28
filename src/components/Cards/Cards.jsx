@@ -6,14 +6,17 @@ import './Cards.css'
 
 export default function Cards() {
     const dispatch= useDispatch();
+    const error= useSelector(state=>state.error);
     useEffect(()=>{
 
         dispatch(getAllCharacters())},[]);
         let characters=useSelector((state)=> state.characters)
         return (
         <div className='Cards'>
-            {characters.map(character=>(
-                <Card id={character.id} name={character.name} status={character.status} image={character.image}/>
+            {
+            (error!=='') ? <label className='error'>error {error.status} {error.data.error}</label> :
+            characters.map(character=>(
+                <Card key={character.id} id={character.id} name={character.name} status={character.status} image={character.image}/>
             ))}
             
         </div>

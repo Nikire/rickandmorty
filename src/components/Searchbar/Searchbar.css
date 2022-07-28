@@ -1,0 +1,16 @@
+.input{
+    color: #0CF25D;
+    background: #02735E;
+    border:none;
+    outline:none;
+    width: 100px;
+}
+.input::placeholder{color:#0CF25D}
+
+button{
+    color: #0CF25D;
+    background: #02735E;
+    border:none;
+    outline:none;
+    text-align: center;
+}

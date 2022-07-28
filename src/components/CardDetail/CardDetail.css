@@ -1,0 +1,39 @@
+.wrapperDetails{
+    padding:40px;
+    display:flex;
+    justify-content: center;
+}
+
+.CardDetail{
+    border-radius: 20px;
+    background: #025951;
+    color: #0CF25D;
+    padding: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+    gap: 10px;
+
+    border:1px solid white;
+    width: 400px;
+    height: 600px;
+    box-shadow: inset 0 0 10px #0CF25D, 0 0 10px #0CF25D;
+    transition: box-shadow 300ms ease-in-out;
+}
+.CardDetail p{
+    margin-bottom: 10px;
+}
+
+.CardDetail:hover{
+    box-shadow: inset 0 0 5px #0CF25D,0 0 20px #038C3E;
+}
+
+.CardDetail img{
+    width: 200px;
+    height: 200px;
+}
+
+

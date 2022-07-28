@@ -1,0 +1,27 @@
+
+.container-pagination{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.pagination{
+    width: 300px;
+    border-radius: 50px;
+    background: #025951;
+    color:#0CF25D;
+    padding:10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    gap:30px;
+    margin-bottom:20px;
+}
+.pagBut{
+    border-radius: 10px;
+}
+
+.dissabledButton{
+    background: hsl(174, 50%, 18%);
+}

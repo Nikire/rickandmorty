@@ -1,7 +1,7 @@
 import React from 'react'
 import './Filter.css'
 import { useDispatch } from 'react-redux';
-import { setFilter } from '../../actions';
+import { setFilter,resetPages } from '../../actions';
 
 export default function Filter(props) {
     let options = [];
@@ -18,6 +18,7 @@ export default function Filter(props) {
         case 'gender':
             options=['Female','Male','Genderless','unknown'];
             break;
+        default:
 
     }
 
@@ -29,15 +30,18 @@ export default function Filter(props) {
         setSelected(e.target.value)
         if (e.target.value === props.filterType) dispatch(setFilter('', props.filterType))
         else  dispatch(setFilter(e.target.value, props.filterType))
+        dispatch(resetPages())
     }
 
 return (
-    <div className='Filter'>
-        <select name='filter' onChange={onHandleChange} value={selected}>
-            <option defaultValue=''>{props.filterType}</option>
+    <div className='filters'>
+        <select className='filter' name='filter' onChange={onHandleChange} value={selected} >
+            <option className='option' defaultValue='' hidden>{props.filterType}</option>
+            <option className='option' value=''>All</option>
+
             {
                 options.map((option) => (
-                    <option key={option} value={option}>{option}</option>
+                    <option className='option' key={option} value={option}>{option}</option>
                 ))
             }
         </select>
