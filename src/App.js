@@ -10,7 +10,7 @@ export function App() {
     <div className="App">
     <Nav/>
     <Routes>
-      <Route path="/"  element={<Home/>}/>
+      <Route path="/rickandmorty"  element={<Home/>}/>
       <Route path="/characters/:id"  element={<CardDetail/>}/>
     </Routes>
     </div>

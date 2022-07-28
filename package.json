@@ -1,4 +1,5 @@
 {
+  "homepage": "http://Nikire.github.io/rickandmorty",
   "name": "rickandmorty",
   "version": "0.1.0",
   "private": true,
@@ -7,7 +8,6 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
-    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
@@ -41,7 +41,9 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ],
-    "homepage": "http://Nikire.github.io/rickandmorty"
+    ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
