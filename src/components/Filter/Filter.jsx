@@ -41,7 +41,7 @@ export default function Filter(props) {
 return (
     <div className='filters'>
         <select className='filter' name='filter' onChange={onHandleChange} value={selected} >
-            <option className='option' defaultValue='' hidden>{props.filterType}</option>
+            <option className='option' defaultValue='' hidden>{(filters[props.filterType] === '') ? props.filterType : filters[props.filterType]}</option>
             <option className='option' value=''>All</option>
 
             {

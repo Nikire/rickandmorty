@@ -11,7 +11,7 @@ export function App() {
     <Nav/>
     <Routes>
       <Route path="/rickandmorty"  element={<Home/>}/>
-      <Route path="/characters/:id"  element={<CardDetail/>}/>
+      <Route path="/rickandmorty/characters/:id"  element={<CardDetail/>}/>
     </Routes>
     </div>
   );
