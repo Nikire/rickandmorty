@@ -33,9 +33,11 @@ export default function Filter(props) {
         if (e.target.value === props.filterType) dispatch(setFilter('', props.filterType))
         else  dispatch(setFilter(e.target.value, props.filterType))
         dispatch(resetPages())
-        dispatch(getCharacterByName(search,filters,'https://rickandmortyapi.com/api/character?page=1'))
     }
-
+    React.useEffect(() => {
+        dispatch(getCharacterByName(search,filters,'https://rickandmortyapi.com/api/character?page=1'))
+    }, [filters])
+    
 return (
     <div className='filters'>
         <select className='filter' name='filter' onChange={onHandleChange} value={selected} >
