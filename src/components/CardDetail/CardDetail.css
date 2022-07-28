@@ -16,7 +16,7 @@
     align-content: center;
     justify-content: space-evenly;
     gap: 10px;
-
+    align-items: center;
     border:1px solid white;
     width: 400px;
     height: 600px;
@@ -36,4 +36,10 @@
     height: 200px;
 }
 
-
+.error{
+    background:#02735e;
+    border-radius:20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 700;
+}

@@ -11,19 +11,27 @@ export const RESET_PAGES= 'RESET_PAGES';
 export const GET_ERROR= 'GET_ERROR';
 
 export const getAllCharacters= ()=> async dispatch =>{
-    const res=await axios.get("https://rickandmortyapi.com/api/character")
-        dispatch ({
+    await axios.get("https://rickandmortyapi.com/api/character")
+        .then(res=>dispatch ({
             type:GET_ALL_CHARACTERS,
             payload: res.data
-            });
+            }))
+        .catch((err)=> dispatch ({
+            type:GET_ERROR,
+            payload: err.response,
+        }));
         }
 
 export const getCharacterDetail=(id)=> async dispatch =>{
-    const res=await axios.get("https://rickandmortyapi.com/api/character/"+id)
-    dispatch ({
+    await axios.get("https://rickandmortyapi.com/api/character/"+id)
+    .then(res=>dispatch ({
         type:GET_CHARACTER_DETAIL,
         payload: res.data
-    })
+        }))
+        .catch((err)=> dispatch ({
+            type:GET_ERROR,
+            payload: err.response,
+        }));
 }
 
 export const getCharacterByName=(search,filters,page)=> async dispatch =>{

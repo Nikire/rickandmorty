@@ -6,6 +6,7 @@ import './CardDetail.css'
 
 export default function CardDetail() {
     const dispatch= useDispatch();
+    const error= useSelector(state=>state.error);
     let params=useParams();
     useEffect(()=>{
         dispatch(getCharacterDetail(params.id))},[]);
@@ -18,6 +19,7 @@ export default function CardDetail() {
         }
     return (
         <div className='wrapperDetails'>
+            {(error!=='') ? <label className='error'>error {error.status} {error.data.error}</label> :
             <div className='CardDetail'>
                 <p>Name: {character.name}</p>
                 <p>Status: {character.status}</p>
@@ -26,6 +28,8 @@ export default function CardDetail() {
                 <p>Origin: {origin}</p>
                 <img src={character.image} alt=''/>    
             </div>
+            }
+            
         </div>
     )
 }
