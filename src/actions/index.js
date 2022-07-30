@@ -7,6 +7,7 @@ export const GET_CHARACTER_DETAIL='GET_CHARACTER_DETAIL';
 export const GET_CHARACTER_BY_NAME = 'GET_CHARACTER_BY_NAME';
 export const SET_FILTER = 'SET_FILTER';
 export const SET_SEARCH = 'SET_SEARCH';
+export const SET_LOADING= 'SET_LOADING';
 export const RESET_PAGES= 'RESET_PAGES';
 export const GET_ERROR= 'GET_ERROR';
 
@@ -23,15 +24,21 @@ export const getAllCharacters= ()=> async dispatch =>{
         }
 
 export const getCharacterDetail=(id)=> async dispatch =>{
+    dispatch(setLoading(true));
     await axios.get("https://rickandmortyapi.com/api/character/"+id)
-    .then(res=>dispatch ({
+    .then(res=>{
+        dispatch(setLoading(false))
+        return dispatch ({
         type:GET_CHARACTER_DETAIL,
         payload: res.data
-        }))
-        .catch((err)=> dispatch ({
+        })
+    })
+        .catch((err)=> {
+            dispatch(setLoading(false))
+            return dispatch ({
             type:GET_ERROR,
             payload: err.response,
-        }));
+        })});
 }
 
 export const getCharacterByName=(search,filters,page)=> async dispatch =>{
@@ -52,6 +59,12 @@ export const getCharacterByName=(search,filters,page)=> async dispatch =>{
     //BUENA MANERA DE UTILIZAR EL AXIOS
 }
 
+export const setLoading=(loading)=>{
+    return ({
+        type:SET_LOADING,
+        payload: loading,
+    })
+}
 
 export const setFilter=(filter,filterType)=>{
     return ({

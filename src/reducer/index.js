@@ -4,6 +4,7 @@ const initialState={
     characterDetails:{},
     search:'',
     error:'',
+    loading:false,
     filters:{
         status:'',
         type:'',
@@ -56,6 +57,11 @@ const rootReducer = (state = initialState, action) => {
             return{
                 ...state,
                 error: action.payload,
+            }
+        case actions.SET_LOADING:
+            return{
+                ...state,
+                loading: action.payload,
             }
         default:
             return state;
