@@ -26,7 +26,7 @@ export default function Card(props) {
 
     return (
         <div className='Card'>
-            <Link className='link' to={`/characters/${props.id}`}><span>{props.name}</span></Link>
+            <Link className='link' to={`/rickandmorty/characters/${props.id}`}><span>{props.name}</span></Link>
             <img src={props.image} alt=''/>
             <span><div style={statusIcon}></div> {props.status}</span>
         </div>
