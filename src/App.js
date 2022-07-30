@@ -10,8 +10,8 @@ export function App() {
     <div className="App">
     <Nav/>
     <Routes>
-      <Route path="/rickandmorty"  element={<Home/>}/>
-      <Route path="/rickandmorty/characters/:id"  element={<CardDetail/>}/>
+      <Route path="/"  element={<Home/>}/>
+      <Route path="/characters/:id"  element={<CardDetail/>}/>
       <Route
       path="*"
       element={<SoftNotFound/>}
