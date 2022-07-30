@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function SoftNotFound() {
     const navigate= useNavigate();
-    const redirect= ()=>(setTimeout(()=>navigate('/'),3000))
+    const redirect= ()=>(setTimeout(()=>navigate('/rickandmorty/'),3000))
 
     useEffect(()=>{redirect()},[])
 
